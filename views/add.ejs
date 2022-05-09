@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+    <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <a href="/"><%= title %></a></p>
+        <form method="POST">
+            <label for="reporter">Twój nick:</label>
+            <input type="text" id="reporter" name="reporter" placeholder="Tu wpisz swoj nick...">
+            <label for="reported">Zgłaszasz:</label>
+            <input type="text" id="reported" name="reported" placeholder="Tu wpisz nick gracza którego chcesz zgłosić..."><br>
+            <label for="score">Punkty honoru:</label>
+            <input type="number" id="score" name="score" placeholder="Punkty na + lub na -">
+            <label for="reason">Powód:</label>
+            <input type="text" id="reason" name="reason" placeholder="Powód zgłoszenia..."><br><br>
+            <label for="key">Tajny klucz:</label><br>
+            <input type="password" id="key" name="key"><br>
+            <input type="submit">
+        </form>
+    </body>
+</html>

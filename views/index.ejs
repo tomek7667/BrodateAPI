@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <a href="/add"><%= title %></a></p>
+    <p>Wyszukaj:</p>
+    <input type="text" placeholder="Użytkownik" id="user_search">
+    <input type="text" placeholder="Zgłaszający" id="reporter_search">
+    <input type="text" placeholder="Data" id="date_search">
+    <input type="text" placeholder="Powód zgłoszenia" id="reason_search">
+  <div id="brodacze">
+    <%
+    for (let brodacz of players) {
+      __append(`
+        <div id="brodacz-${brodacz.ID}" class="brodaczContainer">
+            <span>Użytkownik:</span>
+            <div id="reportedName-${brodacz.ID}"><b>${decodeURIComponent(brodacz.username)}</b></div>
+            <div id="head-${brodacz.ID}" class="headBox">
+                <img src="https://minotar.net/avatar/${decodeURIComponent(brodacz.username)}/48">
+            </div>
+            <span>Zgłaszający:</span>
+            <div id="reporterName-${brodacz.ID}">${decodeURIComponent(brodacz.reporter)}</div>
+            <span>Punkty za zgloszenie:</span>
+            <div id="points-${brodacz.ID}">${decodeURIComponent(brodacz.score)}</div>
+            <span>Data zgloszenia:</span>
+            <div id="data-${brodacz.ID}">${brodacz.submissionDate.toISOString().split('T')[0]}</div>
+            <span>Powód zgłoszenia:</span>
+            <div id="reason-${brodacz.ID}">${decodeURIComponent(brodacz.reason)}</div>
+        </div>
+
+      `)
+    }
+  %>
+
+  </div>
+
+
+  </body>
+  <script>
+    let userSearch = document.getElementById('user_search');
+    let reporterSearch = document.getElementById('reporter_search');
+    let dateSearch = document.getElementById('date_search');
+    let reasonSearch = document.getElementById('reason_search');
+    let brodacze = document.getElementById('brodacze');
+
+    userSearch.addEventListener('input', () => {
+      let userText = userSearch.value;
+      let reporterText = reporterSearch.value;
+      let dateText = dateSearch.value;
+      let reasonText = reasonSearch.value;
+      for (let div of brodacze.children) {
+        let brodaczId = div.id.split("-")[1];
+        if (
+                document.getElementById(`reportedName-${brodaczId}`).innerText.toLowerCase().includes(userText.toLowerCase()) &&
+                document.getElementById(`reporterName-${brodaczId}`).innerText.toLowerCase().includes(reporterText.toLowerCase()) &&
+                document.getElementById(`data-${brodaczId}`).innerText.toLowerCase().includes(dateText.toLowerCase()) &&
+                document.getElementById(`reason-${brodaczId}`).innerText.toLowerCase().includes(reasonText.toLowerCase())
+        ) {
+          div.style.display = 'block';
+        } else {
+          div.style.display = 'none';
+        }
+      }
+    })
+    reporterSearch.addEventListener('input', () => {
+      let userText = userSearch.value;
+      let reporterText = reporterSearch.value;
+      let dateText = dateSearch.value;
+      let reasonText = reasonSearch.value;
+      for (let div of brodacze.children) {
+        let brodaczId = div.id.split("-")[1];
+        if (
+                document.getElementById(`reportedName-${brodaczId}`).innerText.toLowerCase().includes(userText.toLowerCase()) &&
+                document.getElementById(`reporterName-${brodaczId}`).innerText.toLowerCase().includes(reporterText.toLowerCase()) &&
+                document.getElementById(`data-${brodaczId}`).innerText.toLowerCase().includes(dateText.toLowerCase()) &&
+                document.getElementById(`reason-${brodaczId}`).innerText.toLowerCase().includes(reasonText.toLowerCase())
+        ) {
+          div.style.display = 'block';
+        } else {
+          div.style.display = 'none';
+        }
+      }
+    })
+    dateSearch.addEventListener('input', () => {
+      let userText = userSearch.value;
+      let reporterText = reporterSearch.value;
+      let dateText = dateSearch.value;
+      let reasonText = reasonSearch.value;
+      for (let div of brodacze.children) {
+        let brodaczId = div.id.split("-")[1];
+        if (
+                document.getElementById(`reportedName-${brodaczId}`).innerText.toLowerCase().includes(userText.toLowerCase()) &&
+                document.getElementById(`reporterName-${brodaczId}`).innerText.toLowerCase().includes(reporterText.toLowerCase()) &&
+                document.getElementById(`data-${brodaczId}`).innerText.toLowerCase().includes(dateText.toLowerCase()) &&
+                document.getElementById(`reason-${brodaczId}`).innerText.toLowerCase().includes(reasonText.toLowerCase())
+        ) {
+          div.style.display = 'block';
+        } else {
+          div.style.display = 'none';
+        }
+      }
+    })
+    dateSearch.addEventListener('input', () => {
+      let userText = userSearch.value;
+      let reporterText = reporterSearch.value;
+      let dateText = dateSearch.value;
+      let reasonText = reasonSearch.value;
+      for (let div of brodacze.children) {
+        let brodaczId = div.id.split("-")[1];
+        if (
+                document.getElementById(`reportedName-${brodaczId}`).innerText.toLowerCase().includes(userText.toLowerCase()) &&
+                document.getElementById(`reporterName-${brodaczId}`).innerText.toLowerCase().includes(reporterText.toLowerCase()) &&
+                document.getElementById(`data-${brodaczId}`).innerText.toLowerCase().includes(dateText.toLowerCase()) &&
+                document.getElementById(`reason-${brodaczId}`).innerText.toLowerCase().includes(reasonText.toLowerCase())
+        ) {
+          div.style.display = 'block';
+        } else {
+          div.style.display = 'none';
+        }
+      }
+    })
+  </script>
+</html>

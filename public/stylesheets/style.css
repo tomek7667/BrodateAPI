@@ -1,0 +1,28 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.brodaczContainer {
+  border: 7px solid #e58181;
+  border-radius: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 8px;
+}
+
+span {
+  color: #7e7e7e;
+}
+
+.headBox {
+  float: right;
+}
+
+input {
+  margin: 5px;
+}
